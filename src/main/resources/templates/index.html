@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome to CGI App</title>
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+</head>
+<body>
+	<h1 th:utext="${message}">..!..</h1>
+	<div>
+		<table border="1">
+			<tr>
+				<th>Recipe Operations</th>
+				<th>Log Operations</th>
+			</tr>
+			<tr>
+				<td>
+				<!-- Button to get all the recipes -->
+				<input type="button" onclick="location.href='/recipes'"
+					value="Get All Recipes">
+				</br>	
+				</br>
+				
+				<!-- Form to get a list of ingredients -->
+				<form method="get" action="/recipeingredients">
+				<select multiple name="ingredients">
+						<option value="mushrooms">Mushrooms</option>
+						<option value="barbecue sauce">Barbecue Sauce</option>
+						<option value="sandwich rolls">Sandwich Rolls</option>
+						<option value="lettuce">Lettuce</option>
+						<option value="tomato">Tomato</option>
+						<option value="rice">Rice</option>
+						<option value="chicken">Chicken</option>
+						<option value="onions">Onions</option>
+						<option value="ham">Ham</option>
+						<option value="garlic">Garlic</option>
+						<option value="italian bread">Italian Bread</option>
+						<option value="butter">Butter</option>
+						<option value="eggs">Eggs</option>
+						<option value="mustard">Mustard</option>
+						<option value="pastry">Pastry</option>
+						<option value="pita bread">Pita Bread</option>
+						<option value="dijon mustard">Dijon Mustard</option>
+						<option value="vinegar">Vinegar</option>
+						<option value="Red Onions">Red Onions</option>
+						<option value="mayonaise">Mayonaise</option>
+						<option value="balsamic vinegar">Balsamic Vinegar</option>
+						<option value="vegetable oil">Vegetable Oil</option>
+						<option value="rosemary">Rosemary</option>
+						<option value="pancetta">Pancetta</option>
+						<option value="water">Water</option>
+						<option value="heavy cream">Heavy Cream</option>
+						<option value="port wine">Port Wine</option>
+						<option value="olive oil">Olive Oil</option>
+						<option value="black pepper">Black Pepper</option>
+						<option value="blue cheese">Blue Cheese</option>
+						<option value="soy sauce">Soy Sauce</option>
+						<option value="romano cheese">Romano Cheese</option>
+				</select>
+				
+				</br>
+				</br>
+				<!-- Button to submit the form -->
+				<button type="submit">Submit Ingredients</button>
+				</form>
+				</td>
+				
+				<td>
+				<!-- Form to get a list of log levels -->
+				<form method="get" action="/logtype">
+				<select multiple name="loglevel">
+						<option value="WARN">WARN</option>
+						<option value="ERROR">ERROR</option>
+						<option value="DEBUG">DEBUG</option>
+				</select>
+				
+				</br>
+				</br>
+				
+				<!-- Button to submit the form -->
+				<button type="submit">Submit</button>
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

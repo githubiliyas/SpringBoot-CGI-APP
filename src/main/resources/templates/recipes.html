@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Recipe List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+   </head>
+   <body>
+      <h1>All Recipe List</h1>
+      <br/><br/>
+      <div>
+         <table border="1">
+            <tr>
+               <th>Tile</th>
+               <th>Link</th>
+               <th>Ingredients</th>
+               <th>Image</th>
+            </tr>
+            <tr th:each ="recipe : ${recipes}">
+               <td th:utext="${recipe.title}">...</td>
+               <td th:utext="${recipe.href}">...</td>
+               <td th:utext="${recipe.ingredients}">...</td>
+               <td th:utext="${recipe.thumbnail}">...</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
